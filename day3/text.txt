@@ -1,0 +1,64 @@
+what is git?
+git is version control system
+
+
+Overview
+
+Definition: Git: a distributed version-control system for tracking changes in source code.
+Key concepts: Repository: project history; Commit: recorded snapshot; Branch: independent line of development; Merge/Rebase: integrate changes; Remote: hosted repo (e.g., GitHub); Working Tree / Staging: edit → git add → git commit.
+Quick commands (cheat-sheet)
+
+Check version: git --version
+Setup identity: git config --global user.name "Your Name"; git config --global user.email "you@example.com"
+Start repo: git init
+Clone remote: git clone <repo-url>
+Check status: git status
+Stage changes: git add <file> or git add .
+Commit: git commit -m "message"
+View history: git log --oneline --graph --decorate --all
+Branches: git branch | git branch <name> | git checkout <name> | git checkout -b <name> (or git switch / git switch -c)
+Push/pull: git push -u origin <branch> | git pull
+Fetch only: git fetch
+Merge: git merge <branch>
+Rebase: git rebase <branch>
+Stash: git stash | git stash pop
+Diff: git diff
+Undo: git restore <file> (unstage/restore), git reset --hard <commit> (dangerous), git revert <commit> (safe)
+Show remotes: git remote -v
+Set remote: git remote add origin <url>
+Best practices
+
+Commits: small, focused, descriptive messages.
+Branches: use feature branches and pull requests for reviews.
+Ignore files: add to .gitignore.
+Protect history: avoid git push --force on shared branches.
+Sign commits: git commit -S for verification when needed.
+Resources & next steps
+
+Official docs: https://git-scm.com
+Book: Pro Git (free) — https://git-scm.com/book/en/v2
+Offer: I can (pick one)
+create a printable cheat-sheet file in this repo,
+walk through Git commands interactively in your project,
+or show how to set up SSH keys and GitHub integration.
+
+
+
+Common commands for working locally
+git status — show current working tree and staged state
+git add <file> / git add . — stage changes
+git diff — show unstaged changes
+git diff --staged — show staged changes
+git commit -m "message" — record staged changes
+git checkout <branch|file> — switch branch or restore files
+git switch <branch> / git switch -c <new-branch> — newer branch commands
+git restore <file> — discard unstaged changes
+git restore --staged <file> — unstage a file
+git reset HEAD <file> — also unstage
+git log — view commit history
+Extra useful working commands
+git branch — list/create branches
+git merge <branch> — merge another branch
+git rebase <branch> — replay commits onto another base
+git stash / git stash pop — save and restore temporary work
+git clean -f — remove untracked files 
