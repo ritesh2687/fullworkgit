@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book My Show</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-box {
+            width: 350px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select,
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signin-btn {
+            background-color: crimson;
+            color: white;
+        }
+
+        .menu-btn {
+            background-color: black;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #1f2533;
+            padding: 12px 30px;
+        }
+
+        .navbar nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .navbar button {
+            background-color: transparent;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .navbar button:hover {
+            background-color: crimson;
+        }
+
+        /* BANNER */
+        .banner img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        /* SECTION TITLE */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 40px 10px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+        }
+
+        .see-all {
+            background-color: crimson;
+            color: white;
+        }
+
+        /* CARD SECTION */
+        .card-section {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px 40px 50px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            width: 220px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .movie-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .movie-type {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <img class="logo"
+            src="https://cdn.prod.website-files.com/6870d8b0c53776c9e8ae3c53/6884543540ff0915c9f852b0_65b6384089ec9e265952391f_bookmyshow-logo-vector-removebg-preview%2520(1).png"
+            alt="Book My Show Logo">
+
+        <div class="header-right">
+
+            <input class="search-box"
+                type="search"
+                placeholder="Search for movies, events, plays, sports and activities">
+
+            <button>Search</button>
+
+            <select>
+                <option>Select Location</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Bangalore</option>
+            </select>
+
+            <button class="signin-btn">Sign In</button>
+
+            <button class="menu-btn">Menu</button>
+
+        </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <nav>
+
+            <a href="#">
+                <button>Movies</button>
+            </a>
+
+            <a href="#">
+                <button>Stream</button>
+            </a>
+
+            <a href="#">
+                <button>Events</button>
+            </a>
+
+            <a href="#">
+                <button>Plays</button>
+            </a>
+
+            <a href="#">
+                <button>Sports</button>
+            </a>
+
+            <a href="#">
+                <button>Activities</button>
+            </a>
+
+            <a href="#">
+                <button>Gift Cards</button>
+            </a>
+
+            <a href="#">
+                <button>Offers</button>
+            </a>
+
+        </nav>
+    </div>
+
+    <!-- BANNER -->
+    <div class="banner">
+        <img src="https://www.equentis.com/blog/wp-content/uploads/2025/05/Story-of-BookMyShow-Storytelling-00-01.jpg"
+            alt="Banner Image">
+    </div>
+
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+        <h2>Recommended Movies</h2>
+        <button class="see-all">See All</button>
+    </div>
+
+    <!-- CARD SECTION -->
+    <div class="card-section">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/avengers-endgame-et00083979-17-04-2019-09-04-19.jpg"
+                alt="Avengers Endgame">
+
+            <div class="card-content">
+                <p class="movie-title">Avengers Endgame</p>
+                <p class="movie-type">Action / Adventure</p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/avengers-endgame-et00083979-17-04-2019-09-04-19.jpg"
+                alt="Avengers Endgame">
+
+            <div class="card-content">
+                <p class="movie-title">Avengers Endgame</p>
+                <p class="movie-type">Action / Adventure</p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/avengers-endgame-et00083979-17-04-2019-09-04-19.jpg"
+                alt="Avengers Endgame">
+
+            <div class="card-content">
+                <p class="movie-title">Avengers Endgame</p>
+                <p class="movie-type">Action / Adventure</p>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <img src="https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/avengers-endgame-et00083979-17-04-2019-09-04-19.jpg"
+                alt="Avengers Endgame">
+
+            <div class="card-content">
+                <p class="movie-title">Avengers Endgame</p>
+                <p class="movie-type">Action / Adventure</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
