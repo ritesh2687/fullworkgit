@@ -1,0 +1,26 @@
+/* ---------------inline css internal css external css--------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+p{
+    color: red;
+    font-size:40px;
+    font-family: 'Playwrite GB S Guides', Courier, monospace;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+body{
+    background-image: url(https://wallpapers.com/images/hd/dark-ages-tmg6fm6m13ql6w1i.jpg);
+    background-size: cover;
+    background-position:top;
+}
