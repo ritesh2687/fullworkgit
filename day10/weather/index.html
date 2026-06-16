@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Get real-time weather updates for any location"
+    />
+    <meta name="theme-color" content="#3b82f6" />
+    <title>Weather App - Real-time Weather Updates</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="weather-app">
+      <div class="weather-card">
+        <header>
+          <h1>Weather App</h1>
+          <p>Get real-time weather updates for any location</p>
+          <div class="search-panel">
+            <input
+              type="text"
+              id="search"
+              placeholder="Enter city name (e.g., London, New York, Tokyo)"
+              aria-label="Search for a city"
+              autocomplete="off"
+            />
+            <button id="btn" aria-label="Search weather">Search</button>
+          </div>
+        </header>
+
+        <div class="weather-info" id="result">
+          
+        </div>
+
+        <footer class="footer">
+          <p>Last updated: <span id="update-time">--:--</span></p>
+          <p>Powered by Weather API</p>
+        </footer>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern, feature-rich to-do application to manage your daily tasks efficiently.">
+    <meta name="keywords" content="todo, task management, productivity, app">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4a90e2">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="To-Do App">
+    <meta property="og:description" content="Manage your tasks efficiently">
+    <meta property="og:type" content="website">
+    
+    <title>To-Do App - Task Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header" role="banner">
+            <div class="header-content">
+                <h1 class="app-title">Task Manager</h1>
+                <p class="app-subtitle">Organize your day efficiently</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main" role="main">
+            <article class="todo-card">
+                <!-- Input Section -->
+                <section class="input-section" aria-labelledby="input-label">
+                    <label id="input-label" for="todoInput" class="input-label">Add a new task</label>
+                    <form class="input-form" id="todoForm">
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="todoInput" 
+                                class="todo-input" 
+                                placeholder="What needs to be done?"
+                                autocomplete="off"
+                                maxlength="100"
+                                required
+                                aria-describedby="input-hint"
+                            >
+                            <span id="input-hint" class="input-hint">Press Enter or click Add Task</span>
+                            <button 
+                                type="submit" 
+                                id="addBtn" 
+                                class="add-btn"
+                                aria-label="Add new task"
+                            >
+                                <span class="btn-icon">+</span>
+                                <span class="btn-text">Add Task</span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Priority and Date Section -->
+                <section class="task-options" aria-labelledby="options-label">
+                    <h2 id="options-label" class="sr-only">Task Options</h2>
+                    <div class="options-group">
+                        <div class="option-item">
+                            <label for="prioritySelect">Priority:</label>
+                            <select id="prioritySelect" class="priority-select" aria-label="Task priority level">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="option-item">
+                            <label for="dueDateInput">Due Date:</label>
+                            <input 
+                                type="date" 
+                                id="dueDateInput" 
+                                class="due-date-input"
+                                aria-label="Task due date"
+                            >
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Filter Section -->
+                <section class="filter-section" aria-labelledby="filter-label">
+                    <h2 id="filter-label" class="sr-only">Filter Tasks</h2>
+                    <div class="filter-buttons" role="tablist">
+                        <button 
+                            class="filter-btn active" 
+                            data-filter="all"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="todoList"
+                        >
+                            All
+                        </button>
+                        <button 
+                            class="filter-btn" 
+                            data-filter="active"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="todoList"
+                        >
+                            Active
+                        </button>
+                        <button 
+                            class="filter-btn" 
+                            data-filter="completed"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="todoList"
+                        >
+                            Completed
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Search Section -->
+                <section class="search-section">
+                    <input 
+                        type="search" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Search tasks..."
+                        aria-label="Search tasks"
+                    >
+                </section>
+
+                <!-- Task List Section -->
+                <section class="list-section" aria-labelledby="list-label">
+                    <h2 id="list-label" class="sr-only">Task List</h2>
+                    
+                    <!-- Empty State -->
+                    <div id="emptyState" class="empty-state" role="status" aria-live="polite">
+                        <div class="empty-icon">📝</div>
+                        <p class="empty-text">No tasks yet. Add one to get started!</p>
+                    </div>
+
+                    <!-- Todo List -->
+                    <ul 
+                        id="todoList" 
+                        class="todo-list"
+                        role="list"
+                        aria-label="Tasks"
+                    >
+                        <!-- Tasks will be added here dynamically -->
+                    </ul>
+
+                    <!-- Error Message -->
+                    <div id="errorMessage" class="error-message" role="alert" aria-live="assertive" aria-hidden="true">
+                        <!-- Error messages will appear here -->
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="stats-section" aria-labelledby="stats-label">
+                    <h2 id="stats-label" class="sr-only">Task Statistics</h2>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Total:</span>
+                            <span id="totalCount" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Active:</span>
+                            <span id="activeCount" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Completed:</span>
+                            <span id="completedCount" class="stat-value">0</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Buttons -->
+                <section class="action-buttons" aria-labelledby="actions-label">
+                    <h2 id="actions-label" class="sr-only">Actions</h2>
+                    <button 
+                        id="clearCompletedBtn" 
+                        class="action-btn clear-btn"
+                        aria-label="Clear all completed tasks"
+                    >
+                        Clear Completed
+                    </button>
+                    <button 
+                        id="clearAllBtn" 
+                        class="action-btn delete-btn"
+                        aria-label="Delete all tasks"
+                    >
+                        Clear All
+                    </button>
+                </section>
+            </article>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer" role="contentinfo">
+            <p>&copy; 2024 Task Manager. Built with care.</p>
+            <p class="footer-note">Your tasks are saved locally in your browser.</p>
+        </footer>
+    </div>
+
+    <!-- Loading Indicator (initially hidden) -->
+    <div id="loadingIndicator" class="loading-indicator" role="status" aria-live="polite" aria-hidden="true">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
